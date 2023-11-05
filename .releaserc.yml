@@ -1,0 +1,9 @@
+branches:
+  - main
+plugins:
+  - - "@semantic-release/exec"
+    - analyzeCommitsCmd: >-
+        podman build
+        --platform=linux/amd64
+        --manifest=ghcr.io/maxbrunet/crun-node20-subtree-control:latest
+        .
